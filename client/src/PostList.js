@@ -11,7 +11,12 @@ const PostList = () => {
     fetchPosts();
   }, []);
   console.log(posts);
-  return <div></div>;
+  return (
+    <div>
+      {Object.values(posts).length !== 0 &&
+        Object.values(posts).map(post => <div key={post.id}>{post.title}</div>)}
+    </div>
+  );
 };
 
 export default PostList;
