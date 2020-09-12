@@ -5,7 +5,7 @@ const { randomBytes } = require("crypto");
 const app = express();
 
 const commentsByPostId = {};
-
+app.use(bodyParser.json());
 app.get("/posts/:id/comments", (req, res) => {
   res.send(commentsByPostId[req.params.id] || []);
 });
