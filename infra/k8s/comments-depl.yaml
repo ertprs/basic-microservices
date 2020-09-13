@@ -15,3 +15,17 @@ spec:
       containers:
         - name: comments
           image: kevinmitaki/comments
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comments-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: comments
+  ports:
+    - name: comments
+      protocol: TCP
+      port: 4001
+      targetPort: 4001
