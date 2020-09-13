@@ -8,10 +8,10 @@ const events = [];
 app.post("/events", async (req, res) => {
   const event = req.body;
   events.push(event);
-  await Axios.post("http://localhost:4000/events", event);
-  await Axios.post("http://localhost:4001/events", event);
-  await Axios.post("http://localhost:4002/events", event);
-  await Axios.post("http://localhost:4003/events", event);
+  await Axios.post("http://posts-clusterip-srv:4000/events", event);
+  // await Axios.post("http://localhost:4001/events", event);
+  // await Axios.post("http://localhost:4002/events", event);
+  // await Axios.post("http://localhost:4003/events", event);
   res.send({ status: "OK" });
 });
 app.get("/events", async (req, res) => {
