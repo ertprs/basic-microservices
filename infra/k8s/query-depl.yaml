@@ -8,8 +8,9 @@ spec:
     matchLabels:
       app: query
   template:
-    labels:
-      app: query
+    metadata:
+      labels:
+        app: query
     spec:
       containers:
         - name: query
