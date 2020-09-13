@@ -14,3 +14,17 @@ spec:
       containers:
         - name: query
           image: kevinmitaki/query
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: query
+spec:
+  type: ClusterIP
+  selector:
+    app: query
+  ports:
+    - name: query
+      protocol: TCP
+      port: 4002
+      targetPort: 4002
