@@ -8,7 +8,7 @@ spec:
   rules:
     - host: posts.com
       http:
-        path:
+        paths:
           - path: /posts
             backend:
               serviceName: posts-clusterip-srv
