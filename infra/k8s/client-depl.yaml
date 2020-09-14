@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    labels:
+      app: client
+    spec:
+      containers:
+        - name: client
+          image: kevinmitaki/client
