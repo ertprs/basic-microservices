@@ -8,8 +8,9 @@ spec:
     matchLabels:
       app: client
   template:
-    labels:
-      app: client
+    metadata:
+      labels:
+        app: client
     spec:
       containers:
         - name: client
